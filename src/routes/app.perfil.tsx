@@ -32,7 +32,7 @@ function Perfil() {
 
       <div className="px-5 space-y-4">
         {/* Code card */}
-        <div className="finz-card bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+        <div className="tlamach-card bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
           <p className="text-xs opacity-80 mb-2">TU CÓDIGO ÚNICO</p>
           <p className="text-4xl font-bold tracking-[0.3em] mb-3">{code ?? "------"}</p>
           <p className="text-sm opacity-90 mb-4">
@@ -48,7 +48,7 @@ function Perfil() {
         </div>
 
         {/* Rank */}
-        <div className="finz-card">
+        <div className="tlamach-card">
           <p className="text-xs text-muted-foreground mb-1">Rango actual</p>
           <h3 className="text-xl font-bold mb-2">{user ? RANK_NAMES[user.current_rank] : "—"}</h3>
           <p className="text-sm text-muted-foreground">Sube de nivel completando lecciones.</p>
@@ -70,7 +70,7 @@ function Perfil() {
               return (
                 <div
                   key={b.key}
-                  className={`finz-card text-center ${has ? "" : "opacity-40 grayscale"}`}
+                  className={`tlamach-card text-center ${has ? "" : "opacity-40 grayscale"}`}
                 >
                   <div className="text-3xl mb-2">{has ? "🏆" : "🔒"}</div>
                   <p className="font-semibold text-sm">{b.name}</p>
@@ -91,7 +91,7 @@ function Perfil() {
 
 function StatCard({ icon: Icon, value, label, color }: { icon: typeof Flame; value: number; label: string; color: string }) {
   return (
-    <div className="finz-card text-center py-4">
+    <div className="tlamach-card text-center py-4">
       <div className={`w-10 h-10 rounded-2xl mx-auto mb-2 flex items-center justify-center ${color}`}>
         <Icon className="w-5 h-5" />
       </div>

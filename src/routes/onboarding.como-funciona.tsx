@@ -40,7 +40,7 @@ function ComoFunciona() {
         <p className="text-muted-foreground mb-10">Tres pasos. Cada vez.</p>
         <div className="space-y-4 flex-1">
           {steps.map((s, i) => (
-            <div key={s.title} className="finz-card flex items-start gap-4">
+            <div key={s.title} className="tlamach-card flex items-start gap-4">
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${s.color}`}>
                 <s.icon className="w-6 h-6" />
               </div>

@@ -30,7 +30,7 @@ export function IngresoCard() {
   };
 
   return (
-    <div className="finz-card bg-primary/5 border border-primary/20">
+    <div className="tlamach-card bg-primary/5 border border-primary/20">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <Wallet className="w-4 h-4 text-primary" />

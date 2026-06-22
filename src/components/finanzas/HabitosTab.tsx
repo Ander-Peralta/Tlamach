@@ -37,7 +37,7 @@ export function HabitosTab() {
         <button
           key={h.id}
           onClick={() => toggle(h.id, h.completedToday)}
-          className={`w-full finz-card flex items-center gap-3 text-left transition-all ${
+          className={`w-full tlamach-card flex items-center gap-3 text-left transition-all ${
             h.completedToday ? "bg-success/10 border border-success/30" : ""
           }`}
         >

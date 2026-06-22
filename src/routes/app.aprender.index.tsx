@@ -88,7 +88,7 @@ function ModuleBlock({
 
 function LessonItem({ lesson, done, unlocked }: { lesson: Lesson; done: boolean; unlocked: boolean }) {
   const inner = (
-    <div className={`finz-card flex items-center gap-3 ${!unlocked ? "opacity-50" : ""}`}>
+    <div className={`tlamach-card flex items-center gap-3 ${!unlocked ? "opacity-50" : ""}`}>
       <div
         className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 ${
           done ? "bg-success text-success-foreground" : unlocked ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"

@@ -111,15 +111,15 @@ export function ViewBalanceForm({ onComplete }: FormProps) {
 
   return (
     <div className="space-y-3">
-      <div className="finz-card text-center py-6">
+      <div className="tlamach-card text-center py-6">
         <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Ingreso del mes</p>
         <p className="text-xl font-bold">${income.toLocaleString()}</p>
       </div>
-      <div className="finz-card text-center py-6">
+      <div className="tlamach-card text-center py-6">
         <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Gastos del mes</p>
         <p className="text-xl font-bold">${spent.toLocaleString()}</p>
       </div>
-      <div className={`finz-card text-center py-8 ${balance >= 0 ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
+      <div className={`tlamach-card text-center py-8 ${balance >= 0 ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
         <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Tu balance</p>
         <p className={`text-4xl font-bold ${balance >= 0 ? "text-success" : "text-destructive"}`}>${balance.toLocaleString()}</p>
         <p className="text-sm text-muted-foreground mt-2">{balance >= 0 ? "¡Vas bien! Te queda margen." : "Estás gastando más de lo que entra."}</p>
@@ -155,7 +155,7 @@ export function TagExpensesForm({ onComplete }: FormProps) {
       <p className="text-sm text-muted-foreground">Marca cada gasto como fijo (predecible) o variable (cambia).</p>
       <div className="space-y-2 max-h-[50vh] overflow-y-auto">
         {recent.map((e) => (
-          <div key={e.id} className="finz-card py-3">
+          <div key={e.id} className="tlamach-card py-3">
             <div className="flex justify-between items-center mb-2">
               <p className="font-medium">{e.category}</p>
               <p className="font-bold text-sm">${Number(e.amount).toLocaleString()}</p>
@@ -184,11 +184,11 @@ export function ViewFixedSummaryForm({ onComplete }: FormProps) {
 
   return (
     <div className="space-y-3">
-      <div className="finz-card bg-primary/5 border border-primary/20">
+      <div className="tlamach-card bg-primary/5 border border-primary/20">
         <p className="text-xs uppercase tracking-wider text-primary mb-1">Gastos fijos del mes</p>
         <p className="text-2xl font-bold">${fixed.toLocaleString()}</p>
       </div>
-      <div className="finz-card bg-accent/5 border border-accent/20">
+      <div className="tlamach-card bg-accent/5 border border-accent/20">
         <p className="text-xs uppercase tracking-wider text-accent mb-1">Gastos variables del mes</p>
         <p className="text-2xl font-bold">${variable.toLocaleString()}</p>
       </div>
@@ -246,7 +246,7 @@ export function Apply503020Form({ onComplete }: FormProps) {
 
   return (
     <div className="space-y-3">
-      <div className="finz-card bg-primary/5 border border-primary/20">
+      <div className="tlamach-card bg-primary/5 border border-primary/20">
         <p className="text-xs uppercase tracking-wider text-primary mb-2">Tu 50/30/20</p>
         <div className="grid grid-cols-3 gap-2 text-center">
           <div><p className="text-xs text-muted-foreground">Necesidades</p><p className="font-bold">${Math.round(needs).toLocaleString()}</p></div>
@@ -256,7 +256,7 @@ export function Apply503020Form({ onComplete }: FormProps) {
       </div>
       <p className="text-sm text-muted-foreground">Te sugerimos estos límites. Ajusta y guarda.</p>
       {budget.map((b) => (
-        <div key={b.id} className="finz-card flex items-center gap-3">
+        <div key={b.id} className="tlamach-card flex items-center gap-3">
           <p className="font-medium flex-1">{b.name}</p>
           <Input type="number" value={values[b.id] ?? ""} onChange={(e) => setValues({ ...values, [b.id]: e.target.value })} className="h-10 w-28 rounded-lg" />
         </div>
@@ -297,7 +297,7 @@ export function SetRecurringContributionForm({ onComplete }: FormProps) {
 
   return (
     <div className="space-y-3">
-      <div className="finz-card">
+      <div className="tlamach-card">
         <p className="text-xs text-muted-foreground">Tu meta activa</p>
         <p className="font-semibold">{active.name}</p>
       </div>
@@ -414,11 +414,11 @@ export function ChooseDebtStrategyForm({ onComplete }: FormProps) {
 
   return (
     <div className="space-y-3">
-      <button onClick={() => setStrategy("snowball")} className={`w-full text-left finz-card border-2 ${strategy === "snowball" ? "border-primary bg-primary/5" : "border-transparent"}`}>
+      <button onClick={() => setStrategy("snowball")} className={`w-full text-left tlamach-card border-2 ${strategy === "snowball" ? "border-primary bg-primary/5" : "border-transparent"}`}>
         <p className="font-semibold mb-1">🏐 Bola de nieve</p>
         <p className="text-sm text-muted-foreground">Empiezas por la deuda más pequeña. Te motiva con victorias rápidas.</p>
       </button>
-      <button onClick={() => setStrategy("avalanche")} className={`w-full text-left finz-card border-2 ${strategy === "avalanche" ? "border-primary bg-primary/5" : "border-transparent"}`}>
+      <button onClick={() => setStrategy("avalanche")} className={`w-full text-left tlamach-card border-2 ${strategy === "avalanche" ? "border-primary bg-primary/5" : "border-transparent"}`}>
         <p className="font-semibold mb-1">🏔️ Avalancha</p>
         <p className="text-sm text-muted-foreground">Empiezas por la de mayor interés. Ahorras más dinero a largo plazo.</p>
       </button>
@@ -457,7 +457,7 @@ export function ProjectCompoundForm({ onComplete }: FormProps) {
         <label className="text-xs text-muted-foreground font-medium">Tasa anual: {rate}%</label>
         <input type="range" min="0" max="20" value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-full" />
       </div>
-      <div className="finz-card bg-primary/5 border border-primary/20 text-center py-6">
+      <div className="tlamach-card bg-primary/5 border border-primary/20 text-center py-6">
         <TrendingUp className="w-8 h-8 text-primary mx-auto mb-2" />
         <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Total final</p>
         <p className="text-4xl font-bold text-primary">${Math.round(future).toLocaleString()}</p>
@@ -482,7 +482,7 @@ export function IdentifyTriggersForm({ onComplete }: FormProps) {
         {EMOTIONAL_TRIGGERS.map((t) => {
           const sel = selected.has(t);
           return (
-            <button key={t} onClick={() => toggle(t)} className={`w-full finz-card flex items-center gap-3 text-left ${sel ? "border border-primary bg-primary/5" : ""}`}>
+            <button key={t} onClick={() => toggle(t)} className={`w-full tlamach-card flex items-center gap-3 text-left ${sel ? "border border-primary bg-primary/5" : ""}`}>
               <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center ${sel ? "bg-primary border-primary text-primary-foreground" : "border-border"}`}>
                 {sel && <Check className="w-4 h-4" />}
               </div>
@@ -556,7 +556,7 @@ export function EnableMonthlyReviewForm({ onComplete }: FormProps) {
         {MONTHLY_REVIEW_CHECKLIST.map((q, i) => {
           const sel = checked.has(i);
           return (
-            <button key={i} onClick={() => toggle(i)} className={`w-full finz-card flex items-center gap-3 text-left ${sel ? "bg-success/10 border border-success/30" : ""}`}>
+            <button key={i} onClick={() => toggle(i)} className={`w-full tlamach-card flex items-center gap-3 text-left ${sel ? "bg-success/10 border border-success/30" : ""}`}>
               <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center shrink-0 ${sel ? "bg-success border-success text-success-foreground" : "border-border"}`}>
                 {sel && <Check className="w-4 h-4" />}
               </div>

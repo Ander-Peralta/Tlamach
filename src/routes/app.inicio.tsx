@@ -42,7 +42,7 @@ function Inicio() {
   return (
     <div>
       <PageHeader
-        title={`${greet} 👋`}
+        title={<span className="flex items-center gap-2">{greet} <img src="/axo.png" alt="Axo" className="w-8 h-8 object-contain inline-block" /></span>}
         subtitle={user ? RANK_NAMES[user.current_rank] : "Bienvenido"}
         right={<StreakChip days={user?.current_streak ?? 0} />}
       />
@@ -52,7 +52,7 @@ function Inicio() {
         <Link
           to="/app/aprender/leccion/$id"
           params={{ id: nextLesson.id }}
-          className="block finz-card bg-gradient-to-br from-primary to-primary/80 text-primary-foreground"
+          className="block tlamach-card bg-gradient-to-br from-primary to-primary/80 text-primary-foreground"
         >
           <div className="flex items-start gap-3">
             <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
@@ -69,7 +69,7 @@ function Inicio() {
         </Link>
 
         {/* Budget */}
-        <Link to="/app/finanzas" className="block finz-card">
+        <Link to="/app/finanzas" className="block tlamach-card">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Wallet className="w-4 h-4 text-muted-foreground" />
@@ -77,7 +77,7 @@ function Inicio() {
             </div>
             <span className="text-sm text-muted-foreground">{Math.round(budgetPct)}%</span>
           </div>
-          <div className="finz-progress mb-2">
+          <div className="tlamach-progress mb-2">
             <span style={{ width: `${budgetPct}%`, background: budgetPct > 90 ? "var(--color-destructive)" : budgetPct > 75 ? "var(--color-warning)" : "var(--color-primary)" }} />
           </div>
           <p className="text-sm text-muted-foreground">
@@ -86,7 +86,7 @@ function Inicio() {
         </Link>
 
         {/* Goal */}
-        <Link to="/app/finanzas" className="block finz-card">
+        <Link to="/app/finanzas" className="block tlamach-card">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Target className="w-4 h-4 text-muted-foreground" />
@@ -97,7 +97,7 @@ function Inicio() {
           {activeGoal ? (
             <>
               <p className="font-medium mb-2">{activeGoal.name}</p>
-              <div className="finz-progress mb-2">
+              <div className="tlamach-progress mb-2">
                 <span style={{ width: `${goalPct}%`, background: "var(--color-accent)" }} />
               </div>
               <p className="text-sm text-muted-foreground">
@@ -109,7 +109,7 @@ function Inicio() {
           )}
         </Link>
 
-        <div className="finz-card flex items-center justify-between">
+        <div className="tlamach-card flex items-center justify-between">
           <div>
             <p className="text-xs text-muted-foreground mb-1">Tu XP total</p>
             <p className="text-2xl font-bold">{user?.total_xp ?? 0}</p>

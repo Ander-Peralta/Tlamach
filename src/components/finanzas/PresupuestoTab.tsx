@@ -44,7 +44,7 @@ export function PresupuestoTab() {
         const pct = limit > 0 ? Math.min(100, (used / limit) * 100) : 0;
         const isOver = used > limit && limit > 0;
         return (
-          <div key={b.id} className="finz-card">
+          <div key={b.id} className="tlamach-card">
             <div className="flex items-center justify-between mb-2">
               <h3 className="font-semibold">{b.name}</h3>
               {editing === b.id ? (
@@ -68,7 +68,7 @@ export function PresupuestoTab() {
                 </button>
               )}
             </div>
-            <div className="finz-progress mb-2">
+            <div className="tlamach-progress mb-2">
               <span
                 style={{
                   width: `${pct}%`,

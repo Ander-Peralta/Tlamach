@@ -54,7 +54,7 @@ export function MetasTab() {
 
   if (!activeGoal && !creating) {
     return (
-      <div className="finz-card text-center py-10">
+      <div className="tlamach-card text-center py-10">
         <div className="w-16 h-16 mx-auto rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
           <Target className="w-8 h-8 text-accent" />
         </div>
@@ -69,7 +69,7 @@ export function MetasTab() {
 
   if (creating) {
     return (
-      <div className="finz-card space-y-3">
+      <div className="tlamach-card space-y-3">
         <h3 className="font-semibold">Nueva meta</h3>
         <div>
           <label className="text-xs text-muted-foreground font-medium">Nombre</label>
@@ -98,7 +98,7 @@ export function MetasTab() {
 
   return (
     <div className="space-y-4">
-      <div className="finz-card">
+      <div className="tlamach-card">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-11 h-11 rounded-2xl bg-accent/15 text-accent flex items-center justify-center">
             <Target className="w-5 h-5" />
@@ -108,7 +108,7 @@ export function MetasTab() {
             <h3 className="font-semibold">{activeGoal!.name}</h3>
           </div>
         </div>
-        <div className="finz-progress mb-2">
+        <div className="tlamach-progress mb-2">
           <span style={{ width: `${pct}%`, background: "var(--color-accent)" }} />
         </div>
         <div className="flex justify-between text-sm mb-4">

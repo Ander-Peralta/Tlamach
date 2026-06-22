@@ -60,7 +60,7 @@ function LessonScreen() {
             return <div key={p} className={`h-1.5 flex-1 rounded-full ${active ? "bg-primary" : "bg-muted"}`} />;
           })}
         </div>
-        <span className="finz-chip-xp text-xs">
+        <span className="tlamach-chip-xp text-xs">
           <Sparkles className="w-3 h-3" /> +{lesson.xp + lesson.practicalXp}
         </span>
       </div>
@@ -80,7 +80,7 @@ function ConceptPhase({ lesson, onNext }: { lesson: Lesson; onNext: () => void }
     <div className="flex flex-col h-full">
       <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Concepto</p>
       <h1 className="text-2xl font-bold mb-4">{lesson.title}</h1>
-      <div className="finz-card bg-primary/5 border border-primary/20 mb-4">
+      <div className="tlamach-card bg-primary/5 border border-primary/20 mb-4">
         <p className="font-semibold text-primary mb-2">💡 Idea clave</p>
         <p className="text-base">{lesson.concept}</p>
       </div>
@@ -141,7 +141,7 @@ function MultipleChoice({ lesson, onComplete }: { lesson: Lesson; onComplete: ()
             Verificar
           </Button>
         ) : (
-          <div className={`finz-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
+          <div className={`tlamach-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
             <p className={`font-semibold mb-3 flex items-center gap-2 ${isCorrect ? "text-success" : "text-destructive"}`}>
               {isCorrect ? <><Check className="w-5 h-5" /> ¡Correcto!</> : <><X className="w-5 h-5" /> Casi. La respuesta es: {lesson.exercise.options?.[correct]}</>}
             </p>
@@ -168,7 +168,7 @@ function Classify({ lesson, onComplete }: { lesson: Lesson; onComplete: () => vo
       <h2 className="text-xl font-semibold mb-4">{lesson.exercise.prompt}</h2>
       <div className="space-y-3">
         {items.map((item, i) => (
-          <div key={i} className="finz-card">
+          <div key={i} className="tlamach-card">
             <p className="font-medium mb-3">{item}</p>
             <div className="flex gap-2">
               {buckets.map((b, bi) => {
@@ -200,7 +200,7 @@ function Classify({ lesson, onComplete }: { lesson: Lesson; onComplete: () => vo
             Verificar
           </Button>
         ) : (
-          <div className={`finz-card ${correct ? "bg-success/10 border border-success/30" : "bg-warning/10 border border-warning/30"}`}>
+          <div className={`tlamach-card ${correct ? "bg-success/10 border border-success/30" : "bg-warning/10 border border-warning/30"}`}>
             <p className={`font-semibold mb-3 ${correct ? "text-success" : "text-warning-foreground"}`}>
               {correct ? "¡Perfecto!" : "Algunas no eran correctas, pero igual avanzas."}
             </p>
@@ -238,7 +238,7 @@ function Calculate({ lesson, onComplete }: { lesson: Lesson; onComplete: () => v
             Verificar
           </Button>
         ) : (
-          <div className={`finz-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
+          <div className={`tlamach-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
             <p className={`font-semibold mb-3 flex items-center gap-2 ${isCorrect ? "text-success" : "text-destructive"}`}>
               {isCorrect ? <><Check className="w-5 h-5" /> ¡Correcto!</> : <><X className="w-5 h-5" /> La respuesta era ${expected.toLocaleString()}</>}
             </p>
@@ -255,7 +255,7 @@ function PracticalPhase({ lesson, onComplete }: { lesson: Lesson; onComplete: ()
     <div className="flex flex-col h-full">
       <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Acción práctica</p>
       <h2 className="text-2xl font-bold mb-4">{lesson.practical.label}</h2>
-      <div className="finz-card bg-accent/10 border border-accent/30 mb-4">
+      <div className="tlamach-card bg-accent/10 border border-accent/30 mb-4">
         <p className="text-base">{lesson.practical.description}</p>
       </div>
       <p className="text-sm text-muted-foreground">
@@ -274,12 +274,11 @@ function DonePhase({ lesson, onExit }: { lesson: Lesson; onExit: () => void }) {
   const total = lesson.xp + lesson.practicalXp;
   return (
     <div className="flex flex-col h-full items-center justify-center text-center">
-      <div className="w-24 h-24 rounded-3xl bg-primary/15 flex items-center justify-center mb-6">
-        <PartyPopper className="w-12 h-12 text-primary" />
-      </div>
+      <img src="/axo.png" alt="Axo celebrando" className="w-32 h-32 object-contain mb-4" />
       <h1 className="text-3xl font-bold mb-3">¡Lección completa!</h1>
-      <p className="text-muted-foreground mb-6">Aprendiste, aplicaste y avanzaste.</p>
-      <span className="finz-chip-xp text-lg mb-10">
+      <p className="text-muted-foreground mb-2">Aprendiste, aplicaste y avanzaste.</p>
+      <p className="text-sm text-primary font-medium mb-6">¡Axo está orgulloso de ti! 🎉</p>
+      <span className="tlamach-chip-xp text-lg mb-10">
         <Sparkles className="w-5 h-5" /> +{total} XP
       </span>
       <Button onClick={onExit} className="w-full h-14 rounded-2xl font-semibold">

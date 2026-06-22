@@ -58,7 +58,7 @@ export function GastosTab() {
           <Plus className="w-5 h-5 mr-1" /> Registrar gasto
         </Button>
       ) : (
-        <div className="finz-card space-y-3">
+        <div className="tlamach-card space-y-3">
           <div>
             <label className="text-xs text-muted-foreground font-medium">Monto</label>
             <Input
@@ -124,13 +124,13 @@ export function GastosTab() {
       <div>
         <h3 className="text-sm font-semibold text-muted-foreground mb-2 px-1">Recientes</h3>
         {expenses.length === 0 ? (
-          <div className="finz-card text-center text-sm text-muted-foreground py-8">
+          <div className="tlamach-card text-center text-sm text-muted-foreground py-8">
             Aún no registras gastos.
           </div>
         ) : (
           <div className="space-y-2">
             {expenses.slice(0, 30).map((e) => (
-              <div key={e.id} className="finz-card py-3">
+              <div key={e.id} className="tlamach-card py-3">
                 <div className="flex items-center justify-between">
                   <div className="min-w-0 flex-1">
                     <p className="font-medium flex items-center gap-2">

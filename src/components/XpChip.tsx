@@ -2,7 +2,7 @@ import { Sparkles } from "lucide-react";
 
 export function XpChip({ xp }: { xp: number }) {
   return (
-    <span className="finz-chip-xp text-sm">
+    <span className="tlamach-chip-xp text-sm">
       <Sparkles className="w-4 h-4" /> {xp} XP
     </span>
   );

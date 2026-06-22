@@ -54,7 +54,7 @@ export function DeudasTab() {
           <Plus className="w-5 h-5 mr-1" /> Registrar deuda
         </Button>
       ) : (
-        <div className="finz-card space-y-3">
+        <div className="tlamach-card space-y-3">
           <div>
             <label className="text-xs text-muted-foreground font-medium">Nombre</label>
             <Input value={name} onChange={(e) => setName(e.target.value)} className="h-11 rounded-xl" placeholder="Ej: Tarjeta de crédito" />
@@ -81,14 +81,14 @@ export function DeudasTab() {
       )}
 
       {debts.length === 0 ? (
-        <div className="finz-card text-center text-sm text-muted-foreground py-10">
+        <div className="tlamach-card text-center text-sm text-muted-foreground py-10">
           <CreditCard className="w-8 h-8 mx-auto mb-2 opacity-50" />
           Aún no tienes deudas registradas.
         </div>
       ) : (
         <div className="space-y-2">
           {debts.map((d) => (
-            <div key={d.id} className="finz-card">
+            <div key={d.id} className="tlamach-card">
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <p className="font-semibold">{d.name}</p>

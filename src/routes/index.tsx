@@ -9,16 +9,16 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Finz — Aprende y controla tu dinero" },
+      { title: "Tlamach — Aprende y controla tu dinero" },
       {
         name: "description",
         content:
-          "App de educación financiera para jóvenes: aprende un concepto, aplícalo de inmediato y construye tu racha.",
+          "Aprende finanzas personales de forma fácil. Organiza tu dinero y alcanza tus metas.",
       },
-      { property: "og:title", content: "Finz — Aprende y controla tu dinero" },
+      { property: "og:title", content: "Tlamach — Aprende y controla tu dinero" },
       {
         property: "og:description",
-        content: "Aprende, aplica y gana puntos. Tu dinero, sin jerga.",
+        content: "Aprende finanzas personales de forma fácil. Organiza tu dinero y alcanza tus metas.",
       },
     ],
   }),
@@ -48,15 +48,18 @@ function Welcome() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-background">
       <div className="w-full max-w-md text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-primary/10 mb-6">
-          <Sparkles className="w-10 h-10 text-primary" />
+        <div className="flex flex-col items-center mb-6 relative">
+          <img src="/axo.png" alt="Mascota Axo" className="w-24 h-24 mb-2 object-contain" />
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-primary/10 shadow-sm border border-primary/20">
+            <img src="/logo.png" alt="Tlamach Logo" className="w-12 h-12 object-contain" />
+          </div>
         </div>
-        <h1 className="text-4xl font-bold mb-3">Finz</h1>
-        <p className="text-lg text-muted-foreground mb-2">
-          Aprende algo, aplícalo hoy, gana puntos.
+        <h1 className="text-4xl font-bold mb-3 text-primary">Tlamach</h1>
+        <p className="text-lg text-foreground font-medium mb-2">
+          Aprende finanzas personales de forma fácil
         </p>
         <p className="text-sm text-muted-foreground mb-10">
-          Educación financiera real para jóvenes, sin jerga ni hojas de cálculo.
+          Organiza tu dinero y alcanza tus metas.
         </p>
 
         {!showCode ? (

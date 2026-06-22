@@ -98,7 +98,7 @@ function LessonScreen() {
             return <div key={p} className={`h-1.5 flex-1 rounded-full ${active ? "bg-primary" : "bg-muted"}`} />;
           })}
         </div>
-        <span className="finz-chip-xp text-xs">
+        <span className="tlamach-chip-xp text-xs">
           <Sparkles className="w-3 h-3" /> +{lesson.xp + lesson.practicalXp}
         </span>
       </div>
@@ -127,7 +127,7 @@ function ConceptPhase({ lesson, onNext }: { lesson: Lesson; onNext: () => void }
     <div className="flex flex-col h-full">
       <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Concepto</p>
       <h1 className="text-2xl font-bold mb-4">{lesson.title}</h1>
-      <div className="finz-card bg-primary/5 border border-primary/20 mb-4">
+      <div className="tlamach-card bg-primary/5 border border-primary/20 mb-4">
         <p className="font-semibold text-primary mb-2">💡 Idea clave</p>
         <p className="text-base">{lesson.concept}</p>
       </div>
@@ -188,7 +188,7 @@ function MultipleChoice({ lesson, onComplete }: { lesson: Lesson; onComplete: ()
         {!checked ? (
           <Button onClick={() => setChecked(true)} disabled={selected === null} className="w-full h-14 rounded-2xl font-semibold">Verificar</Button>
         ) : (
-          <div className={`finz-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
+          <div className={`tlamach-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
             <p className={`font-semibold mb-3 flex items-center gap-2 ${isCorrect ? "text-success" : "text-destructive"}`}>
               {isCorrect ? <><Check className="w-5 h-5" /> ¡Correcto!</> : <><X className="w-5 h-5" /> La respuesta es: {lesson.exercise.options?.[correct]}</>}
             </p>
@@ -214,7 +214,7 @@ function Classify({ lesson, onComplete }: { lesson: Lesson; onComplete: () => vo
       <h2 className="text-xl font-semibold mb-4">{lesson.exercise.prompt}</h2>
       <div className="space-y-3">
         {items.map((item: string, i: number) => (
-          <div key={i} className="finz-card">
+          <div key={i} className="tlamach-card">
             <p className="font-medium mb-3">{item}</p>
             <div className="flex gap-2">
               {buckets.map((b: string, bi: number) => {
@@ -237,7 +237,7 @@ function Classify({ lesson, onComplete }: { lesson: Lesson; onComplete: () => vo
         {!checked ? (
           <Button onClick={() => setChecked(true)} disabled={!allAssigned} className="w-full h-14 rounded-2xl font-semibold">Verificar</Button>
         ) : (
-          <div className={`finz-card ${correct ? "bg-success/10 border border-success/30" : "bg-warning/10 border border-warning/30"}`}>
+          <div className={`tlamach-card ${correct ? "bg-success/10 border border-success/30" : "bg-warning/10 border border-warning/30"}`}>
             <p className={`font-semibold mb-3 ${correct ? "text-success" : "text-warning-foreground"}`}>
               {correct ? "¡Perfecto!" : "Algunas no eran correctas, pero igual avanzas."}
             </p>
@@ -261,13 +261,13 @@ function Calculate({ lesson, onComplete }: { lesson: Lesson; onComplete: () => v
       <h2 className="text-xl font-semibold mb-2">{lesson.exercise.prompt}</h2>
       {lesson.exercise.hint && <p className="text-sm text-muted-foreground mb-4">{lesson.exercise.hint}</p>}
       {lesson.exercise.dynamicAnswer === "balance" && (
-        <div className="finz-card mb-4 text-sm space-y-1">
+        <div className="tlamach-card mb-4 text-sm space-y-1">
           <p>Tu ingreso del mes: <span className="font-bold">${dyn.income.toLocaleString()}</span></p>
           <p>Resta tus gastos del mes y escribe el resultado.</p>
         </div>
       )}
       {(lesson.exercise.dynamicAnswer === "income_50" || lesson.exercise.dynamicAnswer === "income_30" || lesson.exercise.dynamicAnswer === "income_20") && (
-        <div className="finz-card mb-4 text-sm">
+        <div className="tlamach-card mb-4 text-sm">
           Tu ingreso registrado: <span className="font-bold">${dyn.income.toLocaleString()}</span>
         </div>
       )}
@@ -280,7 +280,7 @@ function Calculate({ lesson, onComplete }: { lesson: Lesson; onComplete: () => v
         {!checked ? (
           <Button onClick={() => setChecked(true)} disabled={!value} className="w-full h-14 rounded-2xl font-semibold">Verificar</Button>
         ) : (
-          <div className={`finz-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
+          <div className={`tlamach-card ${isCorrect ? "bg-success/10 border border-success/30" : "bg-destructive/10 border border-destructive/30"}`}>
             <p className={`font-semibold mb-3 flex items-center gap-2 ${isCorrect ? "text-success" : "text-destructive"}`}>
               {isCorrect ? <><Check className="w-5 h-5" /> ¡Correcto!</> : <><X className="w-5 h-5" /> La respuesta era ${expected.toLocaleString()}</>}
             </p>
@@ -303,11 +303,11 @@ function DonePhase({
       </div>
       <h1 className="text-3xl font-bold mb-3">¡Lección completa!</h1>
       <p className="text-muted-foreground mb-4">Aprendiste, aplicaste y avanzaste.</p>
-      <span className="finz-chip-xp text-lg mb-3">
+      <span className="tlamach-chip-xp text-lg mb-3">
         <Sparkles className="w-5 h-5" /> +{total} XP
       </span>
       {bonusInfo.levelBonus && (
-        <div className="finz-card bg-accent/10 border border-accent/30 mb-4">
+        <div className="tlamach-card bg-accent/10 border border-accent/30 mb-4">
           <p className="font-bold text-accent">🏆 ¡Nivel completo!</p>
           {bonusInfo.newRank && <p className="text-sm mt-1">Nuevo rango: <span className="font-semibold">{RANK_NAMES[bonusInfo.newRank]}</span></p>}
         </div>
