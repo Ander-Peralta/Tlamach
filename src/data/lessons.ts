@@ -198,11 +198,11 @@ const L2: Lesson[] = [
     conceptDetail: "Esta es la regla más importante de las finanzas personales. La app puede calcularlo por ti con tus datos reales.",
     exercise: {
       type: "calculate",
-      prompt: "Con tus datos reales: ¿cuál es tu balance este mes?",
-      dynamicAnswer: "balance",
-      hint: "Te mostramos tu ingreso y tus gastos del mes.",
+      prompt: "Ana gana $4,000 al mes. Este mes gastó $3,200 en total. ¿Cuál es su balance?",
+      answer: 800,
+      hint: "Balance = Ingreso - Gasto.",
     },
-    practical: { kind: "view_balance", label: "Tu balance del mes", description: "Mira el resultado con tus propios números." },
+    practical: { kind: "view_balance", label: "Tu balance del mes", description: "Ahora calcúlalo con tus propios números." },
     xp: 15, practicalXp: 0,
   },
   {

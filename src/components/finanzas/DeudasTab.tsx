@@ -37,11 +37,6 @@ export function DeudasTab() {
     toast.success("Deuda registrada");
   };
 
-  const setStrategy = async (id: string, strategy: string) => {
-    await supabase.from("debts").update({ strategy }).eq("id", id);
-    qc.invalidateQueries({ queryKey: ["debts"] });
-  };
-
   const remove = async (id: string) => {
     await supabase.from("debts").delete().eq("id", id);
     qc.invalidateQueries({ queryKey: ["debts"] });
@@ -98,23 +93,7 @@ export function DeudasTab() {
                 </div>
                 <p className="font-bold text-lg">${Number(d.amount).toLocaleString()}</p>
               </div>
-              <div className="flex gap-2 mt-3">
-                <button
-                  onClick={() => setStrategy(d.id, "snowball")}
-                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-medium border-2 ${
-                    d.strategy === "snowball" ? "border-primary bg-primary/10 text-primary" : "border-border"
-                  }`}
-                >
-                  Bola de nieve
-                </button>
-                <button
-                  onClick={() => setStrategy(d.id, "avalanche")}
-                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-medium border-2 ${
-                    d.strategy === "avalanche" ? "border-primary bg-primary/10 text-primary" : "border-border"
-                  }`}
-                >
-                  Avalancha
-                </button>
+              <div className="flex justify-end mt-3">
                 <button onClick={() => remove(d.id)} className="text-xs text-muted-foreground px-2">
                   Eliminar
                 </button>
