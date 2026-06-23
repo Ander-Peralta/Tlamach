@@ -16,7 +16,7 @@ function ComoFunciona() {
   const start = async () => {
     setLoading(true);
     try {
-      const raw = sessionStorage.getItem("finz_onboarding") ?? "{}";
+      const raw = sessionStorage.getItem("tlamach_onboarding") ?? "{}";
       const answers = JSON.parse(raw) as Record<string, string>;
       await createUser(answers);
       navigate({ to: "/app/aprender" });
@@ -36,7 +36,7 @@ function ComoFunciona() {
   return (
     <div className="min-h-screen bg-background px-6 py-10 flex flex-col">
       <div className="max-w-md mx-auto w-full flex-1 flex flex-col">
-        <h1 className="text-3xl font-bold mb-3">Así funciona Finz</h1>
+        <h1 className="text-3xl font-bold mb-3">Así funciona Tlamach</h1>
         <p className="text-muted-foreground mb-10">Tres pasos. Cada vez.</p>
         <div className="space-y-4 flex-1">
           {steps.map((s, i) => (

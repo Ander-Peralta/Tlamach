@@ -40,7 +40,7 @@ function Diagnostico() {
     if (step < QUESTIONS.length - 1) {
       setStep(step + 1);
     } else {
-      sessionStorage.setItem("finz_onboarding", JSON.stringify(next));
+      sessionStorage.setItem("tlamach_onboarding", JSON.stringify(next));
       navigate({ to: "/onboarding/como-funciona" });
     }
   };
