@@ -184,7 +184,7 @@ const L2: Lesson[] = [
     conceptDetail: "Sueldo, beca, freelance, mesada: todo cuenta. Saber cuánto entra y cuándo te da una base sólida para planear.",
     exercise: {
       type: "multiple_choice",
-      prompt: "Si Ana recibe $4,000 al mes por su trabajo de medio tiempo, eso es:",
+      prompt: "Si Axo recibe $4,000 al mes por su trabajo de medio tiempo, eso es:",
       options: ["Un gasto fijo", "Un ingreso de empleo", "Un ahorro", "Una deuda"],
       correct: 1,
     },
@@ -198,7 +198,7 @@ const L2: Lesson[] = [
     conceptDetail: "Esta es la regla más importante de las finanzas personales. La app puede calcularlo por ti con tus datos reales.",
     exercise: {
       type: "calculate",
-      prompt: "Ana gana $4,000 al mes. Este mes gastó $3,200 en total. ¿Cuál es su balance?",
+      prompt: "Si Axo gana $4,000 al mes y este mes gastó $3,200 en total. ¿Cuál es su balance?",
       answer: 800,
       hint: "Balance = Ingreso - Gasto.",
     },
@@ -227,9 +227,9 @@ const L2: Lesson[] = [
     conceptDetail: "Si tus fijos son $3,000 y tu ingreso es $4,000, sólo $1,000 son tu margen real.",
     exercise: {
       type: "calculate",
-      prompt: "Suma tus gastos fijos del mes (etiquetados como 'Fijo').",
-      dynamicAnswer: "fixed_total",
-      hint: "Etiquétalos primero en Finanzas si aún no lo hiciste.",
+      prompt: "Si Axo tiene ingresos de $5,500 y sus gastos fijos son $4,300. ¿Cuánto tiene disponible para gastos variables?",
+      answer: 1200,
+      hint: "Recuerda: Gastos Fijos + Gastos Variables = Ingreso",
     },
     practical: { kind: "view_fixed_summary", label: "Tu resumen fijos vs variables", description: "La app te muestra el total de cada uno." },
     xp: 15, practicalXp: 0,
@@ -260,9 +260,9 @@ const L2: Lesson[] = [
     conceptDetail: "Es una guía, no una ley. Funciona porque es simple y cubre las tres áreas clave.",
     exercise: {
       type: "calculate",
-      prompt: "¿Cuánto debería ser tu 50% de necesidades, según tu ingreso?",
-      dynamicAnswer: "income_50",
-      hint: "Calculamos sobre el ingreso que ya registraste.",
+      prompt: "Si Axo tiene ingresos de $5,500 y un presupuesto 50/30/20. ¿Cuánto debería gastar en necesidades?",
+      answer: 2750,
+      hint: "Recuerda: 50% de 5,500.",
     },
     practical: { kind: "apply_50_30_20", label: "Ajusta tu presupuesto según el 50/30/20", description: "La app te sugiere límites por categoría. Ajusta y guarda." },
     xp: 20, practicalXp: 0,
